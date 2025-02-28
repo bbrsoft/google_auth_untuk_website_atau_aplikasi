@@ -30,5 +30,6 @@ $redirectUri = "https://kerjasama.online/authcallback/callback.php";
 $client->setRedirectUri($redirectUri);
 
 $authUrl = $client->createAuthUrl();
+header("Location: " . $authUrl);
 echo json_encode(["auth_url" => $authUrl, "message" => "Silakan buka URL ini di browser untuk login"]);
 ?>
